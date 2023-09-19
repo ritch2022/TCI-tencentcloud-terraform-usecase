@@ -21,4 +21,5 @@ Once succeed to run `terraform apply`, you can add resources to the CCN instance
 
 ### References
 [CCN](https://www.tencentcloud.com/zh/document/product/1003)
+
 [VPN](https://www.tencentcloud.com/document/product/1037)
