@@ -1,0 +1,75 @@
+tc: TencentCloud {
+    label.near: top-left
+    icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/open_source/eef7ee9c-4314-4d78-96f3-5613efe4bcaa.svg
+    style: {
+        stroke: skyblue
+        font-color: blue
+        fill: white
+    }
+    region-hk: HK {
+        style: {
+            stroke: blue
+            stroke-dash: 3
+            fill: white
+        }
+        vpn: VPN-Gateway {
+            shape: image
+            icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/portal_producticon_v2/58db6dd2-ce89-4bb2-ad2d-3b9fcd70d281.svg
+    
+        }
+    }
+    region-SG: Singapore {
+        style: {
+            stroke: blue
+            stroke-dash: 3
+            fill: white
+        }
+        vpc: VPC {
+            icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/portal_producticon_v2/cce394ea-e7b2-4b62-95da-f7550bfa8c6a.svg
+            cvm1: {
+                shape: image
+                icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/portal_producticon_v2/49332ac8-db31-4926-8d56-9b3fcf93dad0.svg
+            }
+            cvm2: {
+                shape: image
+                icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/portal_producticon_v2/49332ac8-db31-4926-8d56-9b3fcf93dad0.svg
+            }
+        }
+    }
+    region-FK: Frankfurt {
+        style: {
+            stroke: blue
+            stroke-dash: 3
+            fill: white
+        }
+        vpc: VPC {
+            icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/portal_producticon_v2/cce394ea-e7b2-4b62-95da-f7550bfa8c6a.svg
+            mysql: MySQL {
+                shape: image
+                icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/portal_producticon_v2/ab1c43a9-0f8b-4321-9f35-c8b236d343bb.svg
+            }
+            redis: Redis {
+                shape: image
+                icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/portal_producticon_v2/fe7916fb-1792-4b65-8b27-8fa412f15d9a.svg
+            }
+        }
+    }
+    ccn: CCN {
+        shape: image
+        icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/portal_producticon_v2/8bee20f9-7d2a-4178-a0e4-5983787a1d58.svg
+    }
+
+    region-hk.vpn -> ccn
+    ccn -> region-SG.vpc
+    ccn -> region-FK.vpc
+}
+
+user: {
+    shape: image
+    icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/open_source/36ce1f02-687b-4f80-8002-1cbb6ed112c1.svg
+    width: 100
+    height: 100
+}
+
+user -> tc.region-hk.vpn: openvpn-client
+
