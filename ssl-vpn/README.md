@@ -1,7 +1,7 @@
 ### Usecase
 To use SSL VPN to access resources on Tencent Cloud.
 
-<img src="./image.svg" width="400">
+<img src="./assets/image.svg" width="400">
 
 
 
