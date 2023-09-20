@@ -1,0 +1,71 @@
+tc: TencentCloud {
+    label.near: top-left
+    icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/open_source/eef7ee9c-4314-4d78-96f3-5613efe4bcaa.svg
+    style: {
+        stroke: skyblue
+        font-color: grey
+        font-size: 15
+        fill: white
+    }
+    tke: TKE {
+        style: {
+            stroke: blue
+            fill: white
+            font-size: 20
+        }
+        icon: https://imgcache.qq.com/qcloud/tcloud_dtc/static/tc_portal_mapicon/5f121c40-e01d-4727-b4bc-00df4b8158f7.svg
+        
+        dns: ExternalDNS {
+            shape: image
+            icon: https://github.com/kubernetes-sigs/external-dns/blob/master/docs/img/external-dns.png?raw=true
+            width: 80
+            height: 80
+        }
+
+        nginx: {
+            shape: image
+            icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/open_source/7852cb05-0327-430e-8cfb-5465a565d83e.svg
+            width: 60
+            height: 60
+        }
+
+        rpc: RPC {}
+
+        service: {
+            shape: image
+            icon: https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/svc-128.png?raw=true
+            width: 60
+            height: 60
+        }
+
+        ingress: {
+            shape: image
+            icon: https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/ing-128.png?raw=true
+            width: 60
+            height: 60
+        }
+
+        service -> rpc
+        ingress -> nginx
+    }
+}
+
+cf: Cloudflare {
+    style: {
+        fill: white
+        font-size: 20
+    }
+    icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/open_source/93927cbb-e190-4bde-8060-6199e6aaad66.svg
+    records: {
+        shape: image
+        icon: https://cloudcache.tencent-cloud.com/qcloud/ui/static/open_source/1b38e7ea-3bae-486e-9cb3-45c66a35e165.svg
+        width: 80
+        height: 80
+    }
+}
+# direction: right
+
+tc.tke.dns -> cf.records: CNAME / A
+
+cf.records -> tc.tke.service: record
+cf.records -> tc.tke.ingress: record
