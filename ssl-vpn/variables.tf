@@ -1,18 +1,18 @@
 variable "name" {
-  type = string
-  default = "demo"
+  type        = string
+  default     = "demo"
   description = "Name"
 }
 
 variable "region" {
-  type    = string
-  default = "ap-singapore"
+  type        = string
+  default     = "ap-singapore"
   description = "Region"
 }
 
 variable "az" {
-  type    = string
-  default = "ap-singapore-1"
+  type        = string
+  default     = "ap-singapore-1"
   description = "Available zone"
 }
 
