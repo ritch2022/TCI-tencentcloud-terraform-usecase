@@ -8,4 +8,5 @@
 | :---: | :--- | :--- |
 | SSL VPN | create a SSL VPN and use CCN to access resources in different regions for daily operations | ssl-vpn |
 | TKE with ExternalDNS | use ExternalDNS to do auto DNS record update | tke-external-dns |
+| MultiversX Node | deploy MultiversX different kinds of nodes | [Github repo](https://github.com/ritch2022/terraform-tencentcloud-multiversx-lighthouse) |
 ||||

@@ -19,6 +19,8 @@ You should be careful to config `cloud_available_cidrs` and `vpn_client_cidr`.
 
 Once succeed to run `terraform apply`, you can add resources to the CCN instance, they can be accessed after users login VPN client.
 
+[How to download SSL VPN server configuration](https://www.tencentcloud.com/zh/document/product/1037/47175)
+
 ### References
 [CCN](https://www.tencentcloud.com/zh/document/product/1003)
 
