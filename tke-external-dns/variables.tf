@@ -69,7 +69,7 @@ variable "node_pool_name" {
 variable "node_pool_max" {
   type        = number
   description = "TKE node pool max size"
-  default = 1
+  default     = 1
 }
 
 variable "node_pool_min" {
