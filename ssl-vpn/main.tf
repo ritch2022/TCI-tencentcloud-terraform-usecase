@@ -27,9 +27,7 @@ resource "tencentcloud_ccn_attachment" "attachment" {
 }
 
 resource "tencentcloud_vpn_ssl_server" "server" {
-  # 对应的是 云端网段
   local_address = var.cloud_available_cidrs
-  # 对应的是 客户端网段
   remote_address      = var.vpn_client_cidr
   ssl_vpn_server_name = var.name
   vpn_gateway_id      = tencentcloud_vpn_gateway.gw.id

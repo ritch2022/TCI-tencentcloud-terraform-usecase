@@ -136,7 +136,7 @@ resource "tencentcloud_kubernetes_node_pool" "nodes" {
     key_ids                    = ["skey-29neeijb", "skey-kt59rout"]
   }
 
-  # 云硬盘初始化的相关配置
+  # CBS init related configuration
   node_config {
     data_disk {
       disk_type             = "CLOUD_SSD"
@@ -155,7 +155,7 @@ resource "tencentcloud_kubernetes_node_pool" "nodes" {
   }
 }
 
-# 写入本地 kube config
+# lcoal file storage
 resource "local_file" "config" {
   count      = local.need_kube_config_file
   content    = tencentcloud_kubernetes_cluster.tke.kube_config
