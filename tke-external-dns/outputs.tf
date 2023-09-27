@@ -34,13 +34,16 @@ output "cluster_username" {
 }
 
 output "cluster_ca_cert" {
-  value = tencentcloud_kubernetes_cluster.tke.certification_authority
+  value       = tencentcloud_kubernetes_cluster.tke.certification_authority
+  description = "cluster CA certification"
 }
 
 output "domain_1" {
-  value = local.host1
+  value       = local.host1
+  description = "domain name for host1"
 }
 
 output "domain_2" {
-  value = local.host2
+  value       = local.host2
+  description = "domain name for host2"
 }
